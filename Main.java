@@ -1,23 +1,23 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Welcome to the Library Management System!");
+        Member member = new Member(1, "John Doe");
+        Book book1 = new Book(101, "Java Basics", "John Author", "Programming", false);
+        Book book2 = new Book(102, "Python 101", "Jane Author", "Programming", false);
+        Book book3 = new Book(103, "C++ Fundamentals", "James Author", "Programming", false);
+        Book book4 = new Book(104, "Data Structures", "Emily Author", "Education", false);
+        Book book5 = new Book(105, "Algorithms Made Easy", "Alice Author", "Education", false);
+        Book book6 = new Book(106, "Artificial Intelligence", "Bob Author", "Technology", false);
 
-        Book book = new Book(1, "Java Basics", "John Doe", "Programming", false);
+        member.borrowBook(book1);
+        member.borrowBook(book2);
+        member.borrowBook(book3);
+        member.borrowBook(book4);
+        member.borrowBook(book5);
 
-        System.out.println("Book details:");
-        System.out.println("ID: " + book.getId());
-        System.out.println("Title: " + book.getTitle());
-        System.out.println("Author: " + book.getAuthor());
-        System.out.println("Category: " + book.getCategory());
-        System.out.println("Borrowed: " + book.getIsBorrowed());
+        member.borrowBook(book6);
 
-        book.setIsBorrowed(true);
-        System.out.println("\nAfter Borrowing:");
-        System.out.println("Borrowed: " + book.getIsBorrowed());
-
-        book.setIsBorrowed(false);
-        System.out.println("\nAfter Returning:");
-        System.out.println("Borrowed: " + book.getIsBorrowed());
+        System.out.println("\nBorrowed Books:");
+        member.viewBorrowedBooks();
 
     }
 }
