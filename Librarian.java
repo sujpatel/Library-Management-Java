@@ -3,7 +3,8 @@ public class Librarian extends User {
         super(id, name);
     }
 
-    public void addBook(Book book) {
-        book
+    public void addBook(Book book, Library library) {
+        library.addBook(book);
+        System.out.println("Book added to the library: " + book.getTitle());
     }
 }
